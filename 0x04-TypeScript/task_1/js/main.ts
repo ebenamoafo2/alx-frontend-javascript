@@ -43,27 +43,23 @@ const director1: Director = {
   };
 
 console.log(director1);
-// Output
-// Object
-// firstName: "John"
-// fullTimeEmployee: true
-// lastName: "Doe"
-// location: "London"
-// numberOfReports: 17
 
 
-// Interface for the printTeacher function (function signature)
-interface printTeacher {
+
+
+// Interface for the function
+interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-// Function implementation that matches the interface
-const printTeacher: printTeacher = (firstName: string, lastName: string): string => {
-  return `${firstName.slice(0, 1)}. ${lastName}`;
+// Explicit function implementation
+function printTeacher(firstName: string, lastName: string): string {
+  return `${firstName.charAt(0)}. ${lastName}`;
 }
 
-// Test the function
-console.log(printTeacher("John", "Doe")); // Output: J. Doe
+// Example
+console.log(printTeacher("John", "Doe")); // J. Doe
+
 
 
 //Writting a class
