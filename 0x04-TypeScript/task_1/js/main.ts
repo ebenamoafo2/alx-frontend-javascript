@@ -20,3 +20,4 @@ interface printTeacherFunction {
 // printTeacher function implementation
 const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
   return `${firstName.charAt(0)}. ${lastName}`;
+};
