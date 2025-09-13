@@ -52,27 +52,18 @@ console.log(director1);
 // numberOfReports: 17
 
 
-//printing teacher
+// Interface for the printTeacher function (function signature)
 interface printTeacher {
-  firstName: string;
-  lastName: string;
+  (firstName: string, lastName: string): string;
 }
 
-function printTeacher(inputString: printTeacher) : string {
-  const output = `${inputString.firstName.slice(0, 1)}. ${inputString.lastName}`;
-  return output;
+// Function implementation that matches the interface
+const printTeacher: printTeacher = (firstName: string, lastName: string): string => {
+  return `${firstName.slice(0, 1)}. ${lastName}`;
 }
 
-// Input
-const teacher: printTeacher = {
-    firstName: "John",
-    lastName: "Doe"
-}
-
-console.log(printTeacher(teacher));
-
-// Output
-// J. Doe 
+// Test the function
+console.log(printTeacher("John", "Doe")); // Output: J. Doe
 
 
 //Writting a class
