@@ -63,28 +63,35 @@ console.log(printTeacher({ firstName: "J", lastName: "Doe" })); // J. Doe
 
 
 
-//Writting a class
-interface StudentClassInterface {
+// Interface for the constructor parameters
+interface StudentConstructorInterface {
   firstName: string;
   lastName: string;
-  workOnHomework(): string;
-  displayName(): string;
-
 }
 
+// Interface for the StudentClass
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+// Your implementation with corrections:
 class StudentClass implements StudentClassInterface {
-    firstName: string;
-    lastName: string;
+    private firstName: string;
+    private lastName: string;
+    
     constructor(firstName: string, lastName: string) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
+     
     workOnHomework(): string {
-        return "Currently working"
+        return "Currently working";
     }
-
+     
     displayName(): string {
-        return `${this.firstName}`
+        return this.firstName;
     }
 }
+
+/
