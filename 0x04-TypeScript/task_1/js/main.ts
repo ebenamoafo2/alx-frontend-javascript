@@ -53,18 +53,18 @@ console.log(director1);
 
 
 //printing teacher
-interface printTeacherFunction {
+interface printTeacher {
   firstName: string;
   lastName: string;
 }
 
-function printTeacher(inputString: printTeacherFunction) : string {
+function printTeacher(inputString: printTeacher) : string {
   const output = `${inputString.firstName.slice(0, 1)}. ${inputString.lastName}`;
   return output;
 }
 
 // Input
-const teacher: printTeacherFunction = {
+const teacher: printTeacher = {
     firstName: "John",
     lastName: "Doe"
 }
