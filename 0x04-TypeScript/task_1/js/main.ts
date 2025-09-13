@@ -1,5 +1,4 @@
-// Teacher interface with readonly firstName and lastName,
-// optional yearsOfExperience, and index signature for additional attributes
+
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
