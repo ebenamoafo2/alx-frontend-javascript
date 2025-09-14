@@ -49,12 +49,12 @@ function createEmployee(salary: any | string): Director | Teacher {
 }
 
 // ✅ Explicit function definition: type predicate
-function isDirector(employee: Director | Teacher): employee is Director {
+export function isDirector(employee: Director | Teacher): employee is Director {
   return employee instanceof Director;
 }
 
 // ✅ Explicit function definition: calls the right method
-function executeWork(employee: Director | Teacher): string {
+export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   } else {
