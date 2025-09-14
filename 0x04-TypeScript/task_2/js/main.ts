@@ -42,49 +42,16 @@ class Teacher implements TeacherInterface {
   }
 }
 
-// Function to create employee based on salary
+// createEmployee function that returns either Director or Teacher
 function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === "number" && salary < 500) {
+  if (typeof salary === 'number' && salary < 500) {
     return new Teacher();
-  }
-  return new Director();
-}
-
-// Type predicate function to check if employee is a Director
-function isDirector(employee: Director | Teacher): employee is Director {
-  return employee instanceof Director;
-}
-
-// Function to execute work based on employee type
-function executeWork(employee: Director | Teacher): string {
-  if (isDirector(employee)) {
-    return employee.workDirectorTasks();
   } else {
-    return employee.workTeacherTasks();
+    return new Director();
   }
 }
 
-// String literal type for subjects
-type Subjects = 'Math' | 'History';
-
-// Function to teach class based on subject
-function teachClass(todayClass: Subjects): string {
-  if (todayClass === 'Math') {
-    return 'Teaching Math';
-  } else {
-    return 'Teaching History';
-  }
-}
-
-// Test the implementation
-console.log(createEmployee(200)); // Teacher instance
-console.log(createEmployee(1000)); // Director instance
-console.log(createEmployee('$500')); // Director instance
-
-// Test executeWork function
-console.log(executeWork(createEmployee(200))); // "Getting to work"
-console.log(executeWork(createEmployee(1000))); // "Getting to director tasks"
-
-// Test teachClass function
-console.log(teachClass('Math')); // "Teaching Math"
-console.log(teachClass('History')); // "Teaching History"
+// Test cases as per expected result
+console.log(createEmployee(200));    // Should return Teacher instance
+console.log(createEmployee(1000));   // Should return Director instance
+console.log(createEmployee('$500')); // Should return Director instance
