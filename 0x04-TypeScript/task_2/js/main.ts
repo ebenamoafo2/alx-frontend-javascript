@@ -44,7 +44,7 @@ class Teacher implements TeacherInterface {
 
 // createEmployee function that returns either Director or Teacher
 function createEmployee(salary: any | string): Director | Teacher {
-  if (salary < 500) {
+  if ( salary < 500) {
     return new Teacher();
   } else {
     return new Director();
@@ -55,3 +55,21 @@ function createEmployee(salary: any | string): Director | Teacher {
 console.log(createEmployee(200));    // Should return Teacher instance
 console.log(createEmployee(1000));   // Should return Director instance
 console.log(createEmployee('$500')); // Should return Director instance
+
+// Type predicate function to check if employee is a Director
+function isDirector(employee: Director | Teacher): employee is Director {
+  return employee instanceof Director;
+}
+
+// Function to execute work based on employee type
+function executeWork(employee: Director | Teacher): void {
+  if (isDirector(employee)) {
+    console.log(employee.workDirectorTasks());
+  } else {
+    console.log(employee.workTeacherTasks());
+  }
+}
+
+// Execute work examples
+executeWork(createEmployee(200));   // Getting to work
+executeWork(createEmployee(1000));  // Getting to director tasks
