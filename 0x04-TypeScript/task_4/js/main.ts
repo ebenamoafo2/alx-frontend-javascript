@@ -23,7 +23,7 @@ console.log(cpp.getAvailableTeacher());
 
 // Java Subject
 console.log('Java');
-java.teacher = cTeacher;
+java.setTeacher(cTeacher);
 console.log(java.getRequirements());
 console.log(java.getAvailableTeacher());
 
