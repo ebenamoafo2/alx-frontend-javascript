@@ -65,3 +65,19 @@ export function executeWork(employee: Director | Teacher): string {
 // === Example usage ===
 console.log(executeWork(createEmployee(200)));   // Getting to work
 console.log(executeWork(createEmployee(1000)));  // Getting to director tasks
+
+
+// String literal type
+type Subjects = "Math" | "History";
+
+// Explicit function
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  }
+  return "Teaching History";
+}
+
+// === Example usage ===
+console.log(teachClass("Math"));    // Teaching Math
+console.log(teachClass("History")); // Teaching History
